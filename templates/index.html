@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mars mission!</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+           <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+  <div class="container text-center">
+    <h2 class="jumbotron">Mars Mission info</h2>
+    <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">scrape data</a></p>
+  </div>
+  <div class = "container">
+    <class = "row">
+      <class = "col-md-4">
+        <h2>{{Mars.News_title}}</h2>
+      </class>
+    </class>
+  </div>
+  <div class ="container">
+    <div class ="row">
+      <div class = "col-md-6">
+        <p>{{Mars.New_para}}</p>
+      </div>
+    </div>
+  </div>
+  <div class ="container">
+    <div class ="row">
+      <div class = "col-md-8">
+        <img src = {{Mars.Image_URL}} alt="Mars picture" height = "400" width="600"> 
+      </div>
+      <div class= "col-md-4">
+        <p>{{Mars.Mars_weather}}</p>
+        <ul>
+          {% for key,value in Mars.Mars_Fact.items() %}
+             <li>{{key}} {{value}}</li>
+             <br>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class = "container">
+    <div class = "row">
+      <div class ="col-md-8">
+        <h3 style="text-align: center">Mars Hemispheres</h3>
+      </div>
+    </div>
+  </div>
+  <div class ="container">
+    <div class ="row">
+      <div class = "col-md-4">
+        <img src = {{Mars.Images[0].image_url}} alt="Mars picture" height="100" width="100">
+        <p>{{Mars.Images[0].image_title}}</p>
+      </div>
+      <div class = "col-md-4">
+          <img src = {{Mars.Images[1].image_url}} alt="Mars picture" height="100" width="100">
+          <p>{{Mars.Images[1].image_title}}</p> 
+      </div>
+    </div>
+  </div>
+  <div class ="container">
+      <div class ="row">
+        <div class = "col-md-4">
+          <img src = {{Mars.Images[2].image_url}} alt="Mars picture" height="100" width="100">
+          <p>{{Mars.Images[2].image_title}}</p>
+        </div>
+        <div class = "col-md-4">
+            <img src = {{Mars.Images[3].image_url}} alt="Mars picture" height="100" width="100">
+            <p>{{Mars.Images[3].image_title}}</p> 
+        </div>
+      </div>
+    </div>
+        
+  </div>
+  
+</body>
+
+</html>
